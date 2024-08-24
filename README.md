@@ -48,3 +48,20 @@ Solution:
 Extra:
 
 I wasn't familiar how QR codes can be decoded manually but I found [this](https://blog.qartis.com/decoding-small-qr-codes-by-hand/) great article explaining it.
+
+
+### General Skills
+#### Binary Search
+- [Link](https://play.picoctf.org/practice/challenge/442)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/08/24
+
+Description:
+
+Want to play a game? As you use more of the shell, you might be interested in how they work! Binary search is a classic algorithm used to quickly find an item in a sorted list. Can you find the flag? You'll have 1000 possibilities and only 10 guesses. Cyber security often has a huge amount of data to look through - from logs, vulnerability reports, and forensics. Practicing the fundamentals manually might help you in the future when you have to write your own tools! You can download the challenge files here: [challenge.zip](https://artifacts.picoctf.net/c_atlas/18/challenge.zip)
+
+Solution:
+
+1. The challenge.zip contained a shell script which asked to guess a number between 1 and 1000 and it said if the correct number is lower or higher. Like the challenge name suggest, the idea is to use binary search and always guess the number between known lower and higher end.
+
