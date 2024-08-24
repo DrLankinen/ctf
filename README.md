@@ -65,3 +65,24 @@ Solution:
 
 1. The challenge.zip contained a shell script which asked to guess a number between 1 and 1000 and it said if the correct number is lower or higher. Like the challenge name suggest, the idea is to use binary search and always guess the number between known lower and higher end.
 
+### Binary Exploitation
+#### heap 0
+- [Link](https://play.picoctf.org/practice/challenge/438)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/08/24
+
+Description:
+
+Are overflows just a stack concern? Download the binary [here](https://artifacts.picoctf.net/c_tethys/29/chall). Download the source [here](https://artifacts.picoctf.net/c_tethys/29/chall.c).
+
+Solution:
+
+1. `vi chall.c` reading the source file
+2. In `check_win()` there is a condition `strcmp(safe_var, "bico") != 0` which shows that the idea of this challenge is to edit `safe_var` to not match `bico`.
+3. In `init()` we set `pico` to `input_data` and `bico` to `safe_var` and both gets 5 bytes of memory allocated to them.
+4. The last important part is `write_buffer()` which writes input to `input_data`
+5. The idea is to use the terminal UI to write longer than 5 bytes to `input_data` so it overflows to `safe_var` changing its value.
+6. `a` fits 110 times into `input_data` and then it overflows into `safe_var`.
+
+
