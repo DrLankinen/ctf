@@ -8,16 +8,19 @@
 
 ### Forensics
 #### Verify
-[Link](https://play.picoctf.org/practice/challenge/450)
-From: PicoCTF 2024
-Difficulty: Easy
-Completed: 2024/08/24
+- [Link](https://play.picoctf.org/practice/challenge/450)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/08/24
 
 Description:
+
 People keep trying to trick my players with imitation flags. I want to make sure they get the real thing! I'm going to provide the SHA-256 hash and a decrypt script to help you know that my flags are legitimate. You can download the challenge files here:
 [challenge.zip](https://artifacts.picoctf.net/c_rhea/21/challenge.zip)
 
+
 Solution:
+
 1. `wget <url to challenge.zip>`
 1. `unzip challenge.zip`
 1. `cd home/ctf-player/drop-in`
@@ -26,16 +29,22 @@ Solution:
 1. `./decrypt.sh files/<the matching file from the previous command>`
 
 #### Scan Surprise
-[Link](https://play.picoctf.org/practice/challenge/444)
-From: PicoCTF 2024
-Difficulty: Easy
-Completed: 2024/08/24
+- [Link](https://play.picoctf.org/practice/challenge/444)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/08/24
+
 
 Description:
+
 I've gotten bored of handing out flags as text. Wouldn't it be cool if they were an image instead? You can download the challenge files here: [challenge.zip](https://artifacts.picoctf.net/c_atlas/14/challenge.zip)
 
+
 Solution:
+
 1. The challenge.zip contains a QR code in an image file and scanning it with phone displays the flag.
 
+
 Extra:
+
 I wasn't familiar how QR codes can be decoded manually but I found [this](https://blog.qartis.com/decoding-small-qr-codes-by-hand/) great article explaining it.
