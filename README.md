@@ -6,6 +6,21 @@
 
 ## PicoCTF
 
+### General Skills
+#### Time Machine
+- [Link]()
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/08
+
+Description:
+
+What was I last working on? I remember writing a note to help me remember... You can download the challenge files here: [challenge.zip](https://artifacts.picoctf.net/c_titan/160/challenge.zip)
+
+Solution:
+
+1. `wget <url>` revelas that there are at least git files in the downloaded directory. Calling `git log` shows the flag.
+
 ### Forensics
 #### Verify
 - [Link](https://play.picoctf.org/practice/challenge/450)
@@ -94,6 +109,8 @@ Solution:
 Description:
 
 Can you use your knowledge of format strings to make the customers happy? Download the binary [here](https://artifacts.picoctf.net/c_mimas/77/format-string-0). Download the source [here](https://artifacts.picoctf.net/c_mimas/77/format-string-0.c).
+
+Solution:
 
 1. The source file has line `signal(SIGSEGV, sigsegv_handler);` in `main` function. `sigsegv_handler` seems to print the flag so the idea is to call it and it's called when the program tries to access invalid memory location.
 2. When running the program, it first asks what to server for Patrick. After choosing, it has a check `count > 2 * BUFSIZE` where count is `printf(<selected value>)` and `BUFSIZE` is `32`. Out of the options `Gr%114d_Cheese` is longer than 32 because it has `%114d` which normally asks numbers size of 114 but because not provided, it is filled with random characters.
