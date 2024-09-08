@@ -3,6 +3,8 @@
 ## Common commands
 1. `strings file.txt`
     1. Print the sequences of printable characters in files
+1. `file file.txt`
+    1. Determine file type
 
 ## PicoCTF
 
@@ -78,6 +80,20 @@ Extra:
 
 I wasn't familiar how QR codes can be decoded manually but I found [this](https://blog.qartis.com/decoding-small-qr-codes-by-hand/) great article explaining it.
 
+#### Secret of the Polyglot
+- [Link](https://play.picoctf.org/practice/challenge/423)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/08
+
+Description:
+
+he Network Operations Center (NOC) of your local institution picked up a suspicious file, they're getting conflicting information on what type of file it is. They've brought you in as an external expert to examine the file. Can you extract all the information from this strange file? Download the suspicious file [here](https://artifacts.picoctf.net/c_titan/9/flag2of2-final.pdf).
+
+Solution:
+
+1. Opening the PDF files shows the last part of the flag.
+2. `file <filename>.pdf` reveals that it's `png` so `mv <filename>.pdf <filename>.png` and then looking at it reveals the first part of the flag.
 
 ### General Skills
 #### Binary Search
