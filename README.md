@@ -8,7 +8,7 @@
 
 ### General Skills
 #### Time Machine
-- [Link]()
+- [Link](https://play.picoctf.org/practice/challenge/425)
 - From: PicoCTF 2024
 - Difficulty: Easy
 - Completed: 2024/09/08
@@ -20,6 +20,20 @@ What was I last working on? I remember writing a note to help me remember... You
 Solution:
 
 1. `wget <url>` revelas that there are at least git files in the downloaded directory. Calling `git log` shows the flag.
+
+#### Super SSH
+- [Link](https://play.picoctf.org/practice/challenge/424)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/08
+
+Description:
+
+Using a Secure Shell (SSH) is going to be pretty important. Can you ssh as ctf-player to titan.picoctf.net at port xxxxx to get the flag?
+
+Solution:
+
+1. `man ssh` shows docs for the command. Run `ssh -p xxxxx ctf-player@titan.picoctf.net`
 
 ### Forensics
 #### Verify
