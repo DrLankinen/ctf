@@ -85,4 +85,16 @@ Solution:
 5. The idea is to use the terminal UI to write longer than 5 bytes to `input_data` so it overflows to `safe_var` changing its value.
 6. `a` fits 110 times into `input_data` and then it overflows into `safe_var`.
 
+#### format string 0
+- [Link](https://play.picoctf.org/practice/challenge/433)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/07
 
+Description:
+
+Can you use your knowledge of format strings to make the customers happy? Download the binary [here](https://artifacts.picoctf.net/c_mimas/77/format-string-0). Download the source [here](https://artifacts.picoctf.net/c_mimas/77/format-string-0.c).
+
+1. The source file has line `signal(SIGSEGV, sigsegv_handler);` in `main` function. `sigsegv_handler` seems to print the flag so the idea is to call it and it's called when the program tries to access invalid memory location.
+2. When running the program, it first asks what to server for Patrick. After choosing, it has a check `count > 2 * BUFSIZE` where count is `printf(<selected value>)` and `BUFSIZE` is `32`. Out of the options `Gr%114d_Cheese` is longer than 32 because it has `%114d` which normally asks numbers size of 114 but because not provided, it is filled with random characters.
+3. After Patrick is served with `Gr%114d_Cheese`, Bob needs to be served next. He has an option `Cla%sic_Che%s%steak` which in `printf` expects strings to fill `%s` and when not provided, tries to access invalid memory location triggering `sigsegv_handler` function.
