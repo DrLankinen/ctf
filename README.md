@@ -37,6 +37,25 @@ Solution:
 
 1. `man ssh` shows docs for the command. Run `ssh -p xxxxx ctf-player@titan.picoctf.net`
 
+#### endianness
+- [Link]()
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/09
+
+Description:
+
+Know of little and big endian? [Source](https://artifacts.picoctf.net/c_titan/117/flag.c)
+
+Solution:
+
+1. Quickly looking at the code confirms the task category being general knowledge so instead of trying to read the code, it's enough to just run it.
+2. The program asks first little endian representation of a word. From code we see ASCII hexadecimal format is accepted.
+3. I used online converted to get big endian and then converted it to little endian manually.
+
+Big endian: 6C 72 79 73 69
+Little endian: 69 73 79 72 6C
+
 ### Forensics
 #### Verify
 - [Link](https://play.picoctf.org/practice/challenge/450)
