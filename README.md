@@ -145,3 +145,21 @@ Solution:
 1. The source file has line `signal(SIGSEGV, sigsegv_handler);` in `main` function. `sigsegv_handler` seems to print the flag so the idea is to call it and it's called when the program tries to access invalid memory location.
 2. When running the program, it first asks what to server for Patrick. After choosing, it has a check `count > 2 * BUFSIZE` where count is `printf(<selected value>)` and `BUFSIZE` is `32`. Out of the options `Gr%114d_Cheese` is longer than 32 because it has `%114d` which normally asks numbers size of 114 but because not provided, it is filled with random characters.
 3. After Patrick is served with `Gr%114d_Cheese`, Bob needs to be served next. He has an option `Cla%sic_Che%s%steak` which in `printf` expects strings to fill `%s` and when not provided, tries to access invalid memory location triggering `sigsegv_handler` function.
+
+
+### Cryptography
+
+#### interencdec
+- [Link](https://play.picoctf.org/practice/challenge/418)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/09
+
+Description:
+
+Can you get the real meaning from this file. Download the file [here](https://artifacts.picoctf.net/c_titan/111/enc_flag). 
+
+Solution:
+
+1. The file content looks like base64. Running it through base64 decoder twice reveals a string that looks like the flag but the characters aren't correct.
+2. These challenges often use ROT cipher so it's easy to try when the flags always start picoCTF. And in this case it's ROT 7 that decodes this.
