@@ -5,6 +5,8 @@
     1. Print the sequences of printable characters in files
 1. `file file.txt`
     1. Determine file type
+1. `exiftool file.txt`
+    1. Outputs metadata about a file
 
 ## PicoCTF
 
@@ -155,6 +157,20 @@ Solution:
 
 1. Opening the PDF files shows the last part of the flag.
 2. `file <filename>.pdf` reveals that it's `png` so `mv <filename>.pdf <filename>.png` and then looking at it reveals the first part of the flag.
+
+#### CanYouSee
+- [Link](https://play.picoctf.org/practice/challenge/408)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/10
+
+Description:
+
+How about some hide and seek? Download this file [here](https://artifacts.picoctf.net/c_titan/128/unknown.zip).
+
+Solution:
+
+1. `exiftool ukn_reality.jpg` gives `Attribution URL` value which is base64 encoded flag
 
 ### Binary Exploitation
 #### heap 0
