@@ -115,6 +115,28 @@ Solution:
 1. `git log` shows bunch of commits with the same message and it seems like most of them are empty. The Python file that's in the folder seems to have a mistake and probably it's done in a commit that has the flag in it.
 2. `git blame -f message.py` reveals the flag.
 
+#### binhexa
+- [Link](https://play.picoctf.org/practice/challenge/404)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/10
+
+Description:
+
+How well can you perfom basic binary operations? Start searching for the flag here nc titan.picoctf.net xxxxx
+
+Solution:
+
+Binary Number 1: 01100101
+Binary Number 2: 01001100
+
+1. `+` operation result is `010110001`
+2. `2nd number >> 1` operation result is `100110`
+3. `&` operation result is `01000100`
+4. `*` operation result is `01110111111100`
+5. `2nd number << 1` operation result is `11001010`
+6. `|` operation result is `01101101`
+
 ### Forensics
 #### Verify
 - [Link](https://play.picoctf.org/practice/challenge/450)
