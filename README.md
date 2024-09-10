@@ -100,6 +100,21 @@ Solution:
 
 1. Flags were hidden into three different branches `git show feature/part-1` and copy pasting the parts gave the whole flag.
 
+#### Blame Game
+- [Link](https://play.picoctf.org/practice/challenge/405)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/10
+
+Description:
+
+Someone's commits seems to be preventing the program from working. Who is it? You can download the challenge files here: [challenge.zip](https://artifacts.picoctf.net/c_titan/157/challenge.zip)
+
+Solution:
+
+1. `git log` shows bunch of commits with the same message and it seems like most of them are empty. The Python file that's in the folder seems to have a mistake and probably it's done in a commit that has the flag in it.
+2. `git blame -f message.py` reveals the flag.
+
 ### Forensics
 #### Verify
 - [Link](https://play.picoctf.org/practice/challenge/450)
