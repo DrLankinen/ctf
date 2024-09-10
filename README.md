@@ -56,6 +56,21 @@ Solution:
 Big endian: 6C 72 79 73 69
 Little endian: 69 73 79 72 6C
 
+#### Commitment Issues
+- [Link]()
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/10
+
+Description:
+
+I accidentally wrote the flag down. Good thing I deleted it! You download the challenge files here: [challenge.zip](https://artifacts.picoctf.net/c_titan/75/challenge.zip)
+
+Solution:
+
+1. The zip contained a folder with git initialized. The version history had two commits and running `git show <first commit hash>` showed the flag.
+
+
 ### Forensics
 #### Verify
 - [Link](https://play.picoctf.org/practice/challenge/450)
