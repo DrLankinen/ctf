@@ -57,7 +57,7 @@ Big endian: 6C 72 79 73 69
 Little endian: 69 73 79 72 6C
 
 #### Commitment Issues
-- [Link]()
+- [Link](https://play.picoctf.org/practice/challenge/411)
 - From: PicoCTF 2024
 - Difficulty: Easy
 - Completed: 2024/09/10
@@ -70,6 +70,19 @@ Solution:
 
 1. The zip contained a folder with git initialized. The version history had two commits and running `git show <first commit hash>` showed the flag.
 
+#### Collaborative Development
+- [Link](https://play.picoctf.org/practice/challenge/410)
+- From: PicoCTF 2024
+- Difficulty: Easy
+- Completed: 2024/09/10
+
+Description:
+
+My team has been working very hard on new features for our flag printing program! I wonder how they'll work together? You can download the challenge files here: [challenge.zip](https://artifacts.picoctf.net/c_titan/69/challenge.zip)
+
+Solution:
+
+1. Flags were hidden into three different branches `git show feature/part-1` and copy pasting the parts gave the whole flag.
 
 ### Forensics
 #### Verify
