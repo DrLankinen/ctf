@@ -167,6 +167,22 @@ Solution:
 1. Extracting the given file gives a lot of nested files which suggests to use automated way to search through them
 2. `grep -R "picoCTF" .` searches files where content includes "picoCTF" and this found the flag from one file
 
+#### First Find
+- [Link](https://play.picoctf.org/practice/challenge/320)
+- From: PicoGym Exclusive
+- Difficulty: Easy
+- Completed: 2024/09/18
+
+Description:
+
+Unzip this archive and find the file named 'uber-secret.txt' [Download zip file](https://artifacts.picoctf.net/c/502/files.zip)
+
+Solution:
+
+1. I use `unzip file.zip` to extract a compressed file and it by default prints all file paths so I were able to just find the path for `uber-secret.txt` from a handful of other options and check content of it which were the flag.
+2. If there were more files than possible to glance manually, `find . -name uber-secret.txt` could be used to find a path to the file.
+
+
 
 
 
