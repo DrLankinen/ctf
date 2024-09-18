@@ -152,6 +152,23 @@ Solution:
 1. The encoded flag looks like base64 encoded and the title suggests that it has been encoded multiple times
 2. Base64 decoding the flag 5 times gave the correct flag
 
+#### Big Zip
+- [Link](https://play.picoctf.org/practice/challenge/322)
+- From: PicoGym Exclusive
+- Difficulty: Easy
+- Completed: 2024/09/18
+
+Description:
+
+Unzip this archive and find the flag. [Download zip file](https://artifacts.picoctf.net/c/504/big-zip-files.zip)
+
+Solution:
+
+1. Extracting the given file gives a lot of nested files which suggests to use automated way to search through them
+2. `grep -R "picoCTF" .` searches files where content includes "picoCTF" and this found the flag from one file
+
+
+
 
 
 ---
