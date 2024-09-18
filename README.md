@@ -183,6 +183,19 @@ Solution:
 2. If there were more files than possible to glance manually, `find . -name uber-secret.txt` could be used to find a path to the file.
 
 
+#### runme.py
+- [Link](https://play.picoctf.org/practice/challenge/250)
+- From: Beginner PicoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/18
+
+Description:
+
+Run the runme.py script to get the flag. Download the script with your browser or with wget in the webshell. [Download runme.py Python script](https://artifacts.picoctf.net/c/34/runme.py)
+
+Solution:
+
+1. Just need to download the python script and run it with `python runme.py` and it prints the flag.
 
 
 
