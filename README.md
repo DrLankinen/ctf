@@ -137,6 +137,28 @@ Binary Number 2: 01001100
 5. `2nd number << 1` operation result is `11001010`
 6. `|` operation result is `01101101`
 
+#### repetitions
+- [Link](https://play.picoctf.org/practice/challenge/371)
+- From: PicoCTF 2023
+- Difficulty: Easy
+- Completed: 2024/09/18
+
+Description:
+
+Can you make sense of this file? Download the file [here](https://artifacts.picoctf.net/c/471/enc_flag).
+
+Solution:
+
+1. The encoded flag looks like base64 encoded and the title suggests that it has been encoded multiple times
+2. Base64 decoding the flag 5 times gave the correct flag
+
+
+
+---
+
+
+
+
 ### Forensics
 #### Verify
 - [Link](https://play.picoctf.org/practice/challenge/450)
@@ -209,6 +231,12 @@ Solution:
 
 1. `exiftool ukn_reality.jpg` gives `Attribution URL` value which is base64 encoded flag
 
+
+
+---
+
+
+
 ### Binary Exploitation
 #### heap 0
 - [Link](https://play.picoctf.org/practice/challenge/438)
@@ -244,6 +272,11 @@ Solution:
 1. The source file has line `signal(SIGSEGV, sigsegv_handler);` in `main` function. `sigsegv_handler` seems to print the flag so the idea is to call it and it's called when the program tries to access invalid memory location.
 2. When running the program, it first asks what to server for Patrick. After choosing, it has a check `count > 2 * BUFSIZE` where count is `printf(<selected value>)` and `BUFSIZE` is `32`. Out of the options `Gr%114d_Cheese` is longer than 32 because it has `%114d` which normally asks numbers size of 114 but because not provided, it is filled with random characters.
 3. After Patrick is served with `Gr%114d_Cheese`, Bob needs to be served next. He has an option `Cla%sic_Che%s%steak` which in `printf` expects strings to fill `%s` and when not provided, tries to access invalid memory location triggering `sigsegv_handler` function.
+
+
+
+---
+
 
 
 ### Cryptography
