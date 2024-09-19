@@ -393,6 +393,28 @@ Solution:
 
 1. `./ltdis.sh static` creates two new files `static.ltdis.strings.txt` and `static.ltdis.x86_64.txt`. Former contains the flag in a list of other strings.
 
+#### Nice netcat...
+- [Link](https://play.picoctf.org/practice/challenge/156)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+There is a nice program that you can talk to by using this command in a shell: `$ nc mercury.picoctf.net 22342`, but it doesn't speak English...
+
+Solution:
+
+1. The server prints a list of numbers which can be stored to a file with `nc mercury.picoctf.net 22342 > file.txt`
+2. Each number represents a char so the following Python script decodes all of them
+
+```python3
+with open("test.txt", "r") as f:
+    for line in f:
+        for num in line.split():
+            print(chr(int(num)), end="")
+```
+
 
 
 
