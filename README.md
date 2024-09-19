@@ -301,6 +301,23 @@ Solution:
 1. If 88 is in decimal base, what is it in binary base?
     1. 1011000
 
+#### Codebook
+- [Link](https://play.picoctf.org/practice/challenge/238)
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Run the Python script code.py in the same directory as codebook.txt.
+[Download code.py](https://artifacts.picoctf.net/c/3/code.py)
+[Download codebook.txt](https://artifacts.picoctf.net/c/3/codebook.txt)
+
+Solution:
+
+1. Just downloading the both files and running the Python script gave the flag.
+
+
 
 
 
