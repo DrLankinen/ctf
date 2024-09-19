@@ -415,7 +415,19 @@ with open("test.txt", "r") as f:
             print(chr(int(num)), end="")
 ```
 
+#### Obedient Cat
+- [Link](https://play.picoctf.org/practice/challenge/147)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
 
+Description:
+
+This file has a flag in plain sight (aka "in-the-clear"). [Download flag](https://mercury.picoctf.net/static/2d24d50b4ebed90c704575627f1f57b2/flag).
+
+Solution:
+
+1. `cat flag` gives the flag
 
 
 
