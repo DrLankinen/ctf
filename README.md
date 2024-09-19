@@ -593,3 +593,20 @@ Solution:
 
 1. The file content looks like base64. Running it through base64 decoder twice reveals a string that looks like the flag but the characters aren't correct.
 2. These challenges often use ROT cipher so it's easy to try when the flags always start picoCTF. And in this case it's ROT 7 that decodes this.
+
+#### Mod 26
+- [Link](https://play.picoctf.org/practice/challenge/144)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Cryptography can be easy, do you know what ROT13 is? cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_nSkgmDJE}
+
+Solution:
+
+1. Online Rot13 decoder decodes the flag but the title gives the other way to solve this by turning each character into a number `n` between 0 and 25 and then calculating `(n - 13) % 26` to get rot 13 decoded value.
+
+
+
