@@ -286,6 +286,22 @@ Solution:
 1. The last line were intended and removing it fixed the script.
 
 
+#### convertme.py
+- [Link](https://play.picoctf.org/practice/challenge/239)
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Run the Python script and convert the given number from decimal to binary to get the flag. [Download Python script](https://artifacts.picoctf.net/c/22/convertme.py)
+
+Solution:
+
+1. If 88 is in decimal base, what is it in binary base?
+    1. 1011000
+
+
 
 
 ---
