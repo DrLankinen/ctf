@@ -242,6 +242,22 @@ Please md5 hash the text between quotes, excluding the quotes: 'a morgue'
 
 1. The server application asked 3 of these questions and I answered them using an online md5 hash generator and got the flag
 
+#### Glitch Cat
+- [Link](https://play.picoctf.org/practice/challenge/242)
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Our flag printing service has started glitching!
+
+Solution:
+
+1. The server printed the flag where some parts of it were replaced with `char(0x23)` type of parts and I just copy pasted the output to Python command line and got the complete flag.
+
+
+
 
 
 
