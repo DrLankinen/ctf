@@ -350,6 +350,35 @@ Solution:
 1. There was a file burried under a bunch of folders and executing it outputted the flag
 
 
+#### Wave a flag
+- [Link](https://play.picoctf.org/practice/challenge/170)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Can you invoke help flags for a tool or binary? [This program](https://mercury.picoctf.net/static/b28b6021d6040b086c2226ebeb913bc2/warm) has extraordinarily helpful information...
+
+Solution:
+
+1. `chmod +x warm` makes the file executable
+2. Then running `./warm -h` outputs the flag
+
+#### Python Wrangling
+- [Link](https://play.picoctf.org/practice/challenge/166)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Python scripts are invoked kind of like programs in the Terminal... Can you run [this Python script](https://mercury.picoctf.net/static/0bf545252b5120845e3b568b9ad0277e/ende.py) using [this password](https://mercury.picoctf.net/static/0bf545252b5120845e3b568b9ad0277e/pw.txt) to get [the flag](https://mercury.picoctf.net/static/0bf545252b5120845e3b568b9ad0277e/flag.txt.en)?
+
+Solution:
+
+1. `python ende.py -d flag.txt.en` and then input password from `pw.txt` or just one line `python ende.py -d flag.txt.en < pw.txt`
+
 
 
 
