@@ -256,8 +256,19 @@ Solution:
 
 1. The server printed the flag where some parts of it were replaced with `char(0x23)` type of parts and I just copy pasted the output to Python command line and got the complete flag.
 
+#### fixme2.py
+- [Link](https://play.picoctf.org/practice/challenge/241)
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
 
+Description:
 
+Fix the syntax error in the Python script to print the flag. [Download Python script](https://artifacts.picoctf.net/c/4/fixme2.py)
+
+Solution:
+
+1. One if condition had only one `=` and adding second to it fixed the syntax of the script and printed the flag.
 
 
 
