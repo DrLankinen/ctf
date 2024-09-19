@@ -430,6 +430,21 @@ Solution:
 1. `cat flag` gives the flag
 
 
+#### 2Warm
+- [Link](https://play.picoctf.org/practice/challenge/86)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Can you convert the number 42 (base 10) to binary (base 2)?
+
+Solution:
+
+1. Manually converting base 10 to base 2 requires finding the biggest power of 2. 32 is the first biggest so we have `1xxxxx`. 10 is left. Then the biggest is 8 so we have `101xxx`. 2 is left and that's exactly `2**1` so the binary is `101010` and the flag is `picoCTF{101010}`
+
+
 
 
 
