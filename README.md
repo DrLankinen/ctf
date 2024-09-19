@@ -610,3 +610,40 @@ Solution:
 
 
 
+---
+
+
+### Reverse Engineering
+
+#### Transformation
+- [Link](https://play.picoctf.org/practice/challenge/104)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+I wonder what this really is... [enc](https://mercury.picoctf.net/static/e47483f88b12f2ab0c46315afc12f64d/enc) ''.join([chr((ord(flag[i]) << 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])
+
+Solution:
+
+1. Following script solves the flag. The flag characters are between 48 and 125 ascii codes so the range can be narrowed and then the idea is to try which character works.
+
+```python3
+enc = "灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸彥ㄴㅡて㝽"
+
+for enc_chr in enc:
+    enc_num = ord(enc_chr)
+    for i in range(48, 126):
+        if enc_num - (i << 8) <= 125 and enc_num - (i << 8) >= 48:
+            print(chr(i) + chr(enc_num - (i << 8)), end="")
+```
+
+
+
+
+
+
+
+
+
