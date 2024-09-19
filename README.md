@@ -317,6 +317,26 @@ Solution:
 
 1. Just downloading the both files and running the Python script gave the flag.
 
+#### Magikarp Ground Mission
+- [Link](https://play.picoctf.org/practice/challenge/189)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Do you know how to move between directories and read files in the shell? Start the container, `ssh` to it, and then `ls` once connected to begin. Login via `ssh` as `ctf-player` with the password, `481e7b14`
+
+Solution:
+
+1. `ssh ctf-player@<server> -p <port>`
+2. `cat 1of3.flag.txt`
+3. `cat /2of3.flag.txt`
+4. `cat ~/3of3.flag.txt`
+
+
+
+
 
 
 
