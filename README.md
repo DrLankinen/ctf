@@ -379,6 +379,23 @@ Solution:
 
 1. `python ende.py -d flag.txt.en` and then input password from `pw.txt` or just one line `python ende.py -d flag.txt.en < pw.txt`
 
+#### Static ain't always noise
+- [Link](https://play.picoctf.org/practice/challenge/163)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Can you look at the data in this binary: [static](https://mercury.picoctf.net/static/ec4dbd8898ade34e1d60d5b70c1b8c8c/static)? This [BASH script](https://mercury.picoctf.net/static/ec4dbd8898ade34e1d60d5b70c1b8c8c/ltdis.sh) might help!
+
+Solution:
+
+1. `./ltdis.sh static` creates two new files `static.ltdis.strings.txt` and `static.ltdis.x86_64.txt`. Former contains the flag in a list of other strings.
+
+
+
+
 
 
 
