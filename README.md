@@ -335,8 +335,19 @@ Solution:
 4. `cat ~/3of3.flag.txt`
 
 
+#### Tab, Tab, Attack
+- [Link](https://play.picoctf.org/practice/challenge/176)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
 
+Description:
 
+Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: Addadshashanammu.zip
+
+Solution:
+
+1. There was a file burried under a bunch of folders and executing it outputted the flag
 
 
 
