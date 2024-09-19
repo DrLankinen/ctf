@@ -271,6 +271,19 @@ Solution:
 1. One if condition had only one `=` and adding second to it fixed the syntax of the script and printed the flag.
 
 
+#### fixme1.py
+- [Link](https://play.picoctf.org/practice/challenge/240)
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Fix the syntax error in this Python script to print the flag. [Download Python script](https://artifacts.picoctf.net/c/27/fixme1.py)
+
+Solution:
+
+1. The last line were intended and removing it fixed the script.
 
 
 
