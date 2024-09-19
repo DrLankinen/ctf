@@ -213,7 +213,7 @@ Solution:
 2. I just opened Python terminal and checked the value of `char(0x33) + cha...` and gave it to the program and got my flag back
 
 #### PW Crack 1
-- [Link]()
+- [Link](https://play.picoctf.org/practice/challenge/245)
 - From: Beginner picoMini 2022
 - Difficulty: Easy
 - Completed: 2024/09/19
@@ -225,6 +225,25 @@ Can you crack the password to get the flag? Download the password checker [here]
 Solution:
 
 1. The program has condition `user_pw == "691d"` so giving input `691d` to the program reveals the flag
+
+#### HashingJobApp
+- [Link](https://play.picoctf.org/practice/challenge/243)
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+If you want to hash with the best, beat this test!
+
+Solution:
+
+Please md5 hash the text between quotes, excluding the quotes: 'a morgue'
+
+1. The server application asked 3 of these questions and I answered them using an online md5 hash generator and got the flag
+
+
+
 
 
 
