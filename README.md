@@ -197,6 +197,35 @@ Solution:
 
 1. Just need to download the python script and run it with `python runme.py` and it prints the flag.
 
+#### PW Crack 2
+- [Link](https://play.picoctf.org/practice/challenge/246)
+- From: Beginner PicoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Can you crack the password to get the flag? Download the password checker [here](https://artifacts.picoctf.net/c/15/level2.py) and you'll need the encrypted [flag](https://artifacts.picoctf.net/c/15/level2.flag.txt.enc) in the same directory too.
+
+Solution:
+
+1. The python program reveals the password when this condition is true `user_pw == chr(0x33) + chr(0x39) + chr(0x63) + chr(0x65)`
+2. I just opened Python terminal and checked the value of `char(0x33) + cha...` and gave it to the program and got my flag back
+
+#### PW Crack 1
+- [Link]()
+- From: Beginner picoMini 2022
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Can you crack the password to get the flag? Download the password checker [here](https://artifacts.picoctf.net/c/10/level1.py) and you'll need the encrypted [flag](https://artifacts.picoctf.net/c/10/level1.flag.txt.enc) in the same directory too.
+
+Solution:
+
+1. The program has condition `user_pw == "691d"` so giving input `691d` to the program reveals the flag
+
 
 
 
