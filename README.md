@@ -341,6 +341,9 @@ Solution:
 
 
 
+
+
+
 ---
 
 
@@ -417,6 +420,23 @@ How about some hide and seek? Download this file [here](https://artifacts.picoct
 Solution:
 
 1. `exiftool ukn_reality.jpg` gives `Attribution URL` value which is base64 encoded flag
+
+
+#### information
+- [Link](https://play.picoctf.org/practice/challenge/186)
+- From: picoCTF 2021
+- Difficulty: Easy
+- Completed: 2024/09/19
+
+Description:
+
+Files can always be changed in a secret way. Can you find the flag? [cat.jpg](https://mercury.picoctf.net/static/c28a959c5605d5f67480d5dd3a77f302/cat.jpg)
+
+Solution:
+
+1. `exiftool cat.jpg` shows License value that can be base 64 decoded to get the flag.
+
+
 
 
 
