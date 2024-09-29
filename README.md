@@ -518,6 +518,22 @@ Solution:
 1. `nc jupiter.challenges.picoctf.org 41120` and it prints the flag
 
 
+#### Lets warm up
+- [Link](https://play.picoctf.org/practice/challenge/22)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?
+
+Solution:
+
+1. `0x70` is `p` in ASCII
+
+
+
 
 
 
