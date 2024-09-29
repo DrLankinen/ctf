@@ -638,6 +638,33 @@ Solution:
 
 1. Online Rot13 decoder decodes the flag but the title gives the other way to solve this by turning each character into a number `n` between 0 and 25 and then calculating `(n - 13) % 26` to get rot 13 decoded value.
 
+#### The Numbers
+- [Link](https://play.picoctf.org/practice/challenge/68)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+The [numbers](https://jupiter.challenges.picoctf.org/static/f209a32253affb6f547a585649ba4fda/the_numbers.png)... what do they mean?
+
+Solution:
+
+1. The image has numbers and `{`/`}` characters in it. `16 9 3 15 3 20 6 { 20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 }` Looks like the first numbers coresponds to picoCTF and then there is the changing flag value.
+2. `p` is 16th character in alphabets and `c` is 9th which suggests how these can be converted to characters
+3. I created simple python script to convert the changing part of the flag.
+
+```python
+import string
+
+for n in [20, 8, 5, 14, 21, 13, 2, 5, 18, 19, 13, 1, 19, 15, 14]:
+    print(list(string.ascii_lowercase)[n-1], end="")
+```
+
+
+
+
+
 
 
 ---
