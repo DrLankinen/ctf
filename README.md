@@ -503,6 +503,20 @@ Solution:
 
 1. `strings strings | grep pico`
 
+#### what's a net cat?
+- [Link](https://play.picoctf.org/practice/challenge/34)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+Using netcat (nc) is going to be pretty important. Can you connect to jupiter.challenges.picoctf.org at port 41120 to get the flag?
+
+Solution:
+
+1. `nc jupiter.challenges.picoctf.org 41120` and it prints the flag
+
 
 
 
