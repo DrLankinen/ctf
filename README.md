@@ -460,6 +460,22 @@ Solution:
 1. It seems possible to find the flag manually from the flag file but using `cat file | grep picoCTF` finds it faster by looking for string that starts picoCTF.
 
 
+#### Bases
+- [Link](https://play.picoctf.org/practice/challenge/67)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+What does this `bDNhcm5fdGgzX3IwcDM1` mean? I think it has something to do with bases.
+
+Solution:
+
+1. base64 decoder gives `l3arn_th3_r0p35` and then that can be put to the correct format `picoCTF{l3arn_th3_r0p35}`
+
+
+
 
 
 
