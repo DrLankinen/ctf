@@ -445,6 +445,21 @@ Solution:
 1. Manually converting base 10 to base 2 requires finding the biggest power of 2. 32 is the first biggest so we have `1xxxxx`. 10 is left. Then the biggest is 8 so we have `101xxx`. 2 is left and that's exactly `2**1` so the binary is `101010` and the flag is `picoCTF{101010}`
 
 
+#### First Grep
+- [Link](https://play.picoctf.org/practice/challenge/85)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+Can you find the flag in [file](https://jupiter.challenges.picoctf.org/static/515f19f3612bfd97cd3f0c0ba32bd864/file)? This would be really tedious to look through manually, something tells me there is a better way.
+
+Solution:
+
+1. It seems possible to find the flag manually from the flag file but using `cat file | grep picoCTF` finds it faster by looking for string that starts picoCTF.
+
+
 
 
 
