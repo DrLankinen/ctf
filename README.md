@@ -474,6 +474,19 @@ Solution:
 
 1. base64 decoder gives `l3arn_th3_r0p35` and then that can be put to the correct format `picoCTF{l3arn_th3_r0p35}`
 
+#### Warmed Up
+- [Link](https://play.picoctf.org/practice/challenge/58)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+What is 0x3D (base 16) in decimal (base 10)?
+
+Solution:
+
+1. (16 * 3) + (13) = 61
 
 
 
