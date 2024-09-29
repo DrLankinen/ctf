@@ -587,6 +587,25 @@ Solution:
 1. `exiftool cat.jpg` shows License value that can be base 64 decoded to get the flag.
 
 
+#### Glory of the Garden
+- [Link](https://play.picoctf.org/practice/challenge/44)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+This [garden](https://jupiter.challenges.picoctf.org/static/4153422e18d40363e7ffc7e15a108683/garden.jpg) contains more than it seems.
+
+Solution:
+
+1. `strings garden.jpg | grep pico` reveals the flag that were as a string added to the file
+
+
+
+
+
+
 
 
 
