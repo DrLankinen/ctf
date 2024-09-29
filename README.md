@@ -489,6 +489,22 @@ Solution:
 1. (16 * 3) + (13) = 61
 
 
+#### strings it
+- [Link](https://play.picoctf.org/practice/challenge/37)
+- From: picoCTF 2019
+- Difficulty: Easy
+- Completed: 2024/09/29
+
+Description:
+
+Can you find the flag in [file](https://jupiter.challenges.picoctf.org/static/fae9ac5267cd6e44124e559b901df177/strings) without running it?
+
+Solution:
+
+1. `strings strings | grep pico`
+
+
+
 
 
 
