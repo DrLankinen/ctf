@@ -699,7 +699,7 @@ Solution:
 - [Link](https://play.picoctf.org/practice/challenge/449)
 - From: PicoCTF 2024
 - Difficulty: Medium
-- Completed: 2024/10/13
+- Completed: 2024/10/16
 
 Description:
 
