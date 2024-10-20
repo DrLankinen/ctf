@@ -736,6 +736,24 @@ p.sendline(b"4")
 print(p.recvall())
 ```
 
+#### heap 3
+- [Link](https://play.picoctf.org/practice/challenge/440)
+- From: PicoCTF 2024
+- Difficulty: Medium
+- Completed: 2024/10/20
+
+Description:
+
+This program mishandles memory. Can you exploit it to get the flag? Download the binary [here](https://artifacts.picoctf.net/c_tethys/19/chall). Download the source [here](https://artifacts.picoctf.net/c_tethys/19/chall.c).
+
+Solution:
+
+1. The key is a vulnurability called "Use after free"
+2. First command 5 is run to free `x`
+3. In this challenge, the amount of padding needed is 30 because the structure has 30 addresses allocated before `x`.
+4. `123456789012345678901234567890pico` writes `pico` to `x` and then calling the win function revelas the flag.
+
+
 #### format string 0
 - [Link](https://play.picoctf.org/practice/challenge/433)
 - From: PicoCTF 2024
