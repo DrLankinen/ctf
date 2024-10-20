@@ -543,6 +543,22 @@ Solution:
 
 1. `0x70` is `p` in ASCII
 
+#### dont-you-love-banners
+- [Link]()
+- From: picoCTF 2024
+- Difficulty: Medium
+- Completed: 2024/10/20
+
+Description:
+
+Can you abuse the banner?
+
+Solution:
+
+1. The challenge provided two different servers. Connecting with netcat to the first reveals a password used to access the second. The second server also asked the most famous cyber security conference (defcon) and the first person who phreaked (john draper).
+2. `/root` has two files `flag.txt` which can't be opened and `script.py`. The script has the questions asked when connecting so it's some kind of post login script that needs to be completed to access. It reads `banner` from `/home/player/banner`.
+3. `banner` file can be deleted and replaced with a symlink to `script.py` in which case when the server is reconnected, instead of showing the banner, it shows conent of `flag.txt` which contains the flag.
+
 
 
 
